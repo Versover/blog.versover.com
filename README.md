@@ -1,4 +1,3 @@
 # Versover Blog
 
-Blog for Versover
-[Versover](https://versover.com)
+Blog for [Versover](https://versover.com)
