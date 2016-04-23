@@ -24,8 +24,6 @@ $favicon = IMG . '/icons/favicon.png';
 
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
-
 <!-- header -->
 <body <?php body_class( 'blog-home-page' ); ?>>
     <div class="header-wrapper header-wrapper-blog-home">
