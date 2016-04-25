@@ -13,7 +13,14 @@ define( 'IMG', THEMEROOT . '/img' );
 define( 'SCRIPTS', THEMEROOT . '/js' );
 
 /**
- * 2. Set up theme default and register various supported features
+ * 2. Set up the content width value based on theme's design
+ */
+if ( ! isset($content_width) ) {
+    $content_width = 800;
+}
+
+/**
+ * 3. Set up theme default and register various supported features
  */
 if ( !function_exists( 'versover_setup' ) ) {
     function versover_setup() {
@@ -39,8 +46,7 @@ if ( !function_exists( 'versover_setup' ) ) {
 
         // register nav menus
         register_nav_menus( array(
-            'main-menu' => __( 'Main Menu', 'versover' ),
-
+            'main-menu' => __( 'Main Menu', 'versover' )
         ) );
     }
 
@@ -48,7 +54,7 @@ if ( !function_exists( 'versover_setup' ) ) {
 }
 
 /**
- * 3. Display a meta information for a specific post
+ * 4. Display a meta information for a specific post
  */
 if ( ! function_exists( 'versover_post_meta' ) ) {
     function versover_post_meta() {
@@ -63,11 +69,11 @@ if ( ! function_exists( 'versover_post_meta' ) ) {
             // get the date
             printf(
                 '<li class="post-time post_date date updated meta-date">
-                    <span class="date">$d</span>
-                    <span class="month">$s</span>
+                    <span class="date">%d</span>
+                    <span class="month">%s</span>
                 </li>',
-                esc_html( get_the_date( 'd' ) ),
-                esc_html( get_the_date( 'M' ) )
+                get_the_date( 'd' ),
+                get_the_date( 'M' )
             );
 
             // get the post author
@@ -107,5 +113,26 @@ if ( ! function_exists( 'versover_post_meta' ) ) {
         }
 
         echo '</ul>';
+    }
+}
+
+/**
+ * 5. Display pagination
+ */
+if ( ! function_exists( 'versover_paging_nav' ) ) {
+    function versover_paging_nav() { ?>
+        <ul>
+            <?php if ( get_preview_post_link() ) : ?>
+                <li class="next">
+                    <?php previous_post_link( __( 'Newer Posts &rarr;', 'versover' ) ); ?>
+                </li>
+            <?php endif; ?>
+
+            <?php if ( get_next_post_link() ) : ?>
+                <li class="previous">
+                    <?php next_post_link( __( '&larr; Newer Older', 'versover' ) ); ?>
+                </li>
+            <?php endif; ?>
+        </ul> <?php
     }
 }
