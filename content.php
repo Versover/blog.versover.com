@@ -9,7 +9,8 @@
     <div class="row">
         <!-- Article header -->
         <?php if ( is_single() ) : ?>
-            <h3><?php the_title(); ?></h3>
+            <h2><?php the_title(); ?></h2>
+<!--            --><?php //versover_post_meta($inline = true); ?>
         <?php else : ?>
             <h3><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
         <?php endif; ?>
