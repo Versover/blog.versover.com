@@ -115,22 +115,30 @@ if ( ! function_exists( 'versover_post_meta' ) ) {
 
             echo '</ul>';
         } else {
-            echo '<div class="meta">';
-            echo '<ul class="meta-list list-inline">';
-
-            printf('                
-                <li class="post-time post_date date updated"><i class="fa fa-calendar"></i>%s</li>
-                <li class="post-author"><i class="fa fa-user"></i> <a href="$1%s">$2%s</a></li>
-                <li class="post-comments-link">
-                    <a href="#comment-area"><i class="fa fa-comments"></i>' . comments_popup_link( __( 'Leave a comment', 'versover' ), __( 'One comment so far', 'versover' ), __( 'Comments: %', 'versover' ) ) .  '</a>
-                </li>                    
-            ',
-                the_date( 'd m, Y' ),
+            printf('<ul class="meta-list list-inline">
+                        <li class="post-time post_date date updated"><i class="fa fa-calendar"></i>%s</li>',
+                        the_date( 'd M, Y', '', '', false )
+            );
+            printf(
+                '<li class="meta-author post-author"><a href="%1$s" rel="author">%2$s</a></li>',
                 esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-                get_the_author() );
+                get_the_author()
+            );
 
-            echo '</ul>';
-            echo '</div>';
+            if ( comments_open() ) {
+                echo '<li class="post-comments-link">';
+                echo '<span class="meta-reply">';
+                comments_popup_link( __( 'Leave a comment', 'versover' ), __( 'One comment so far', 'versover' ), __( 'Comments: %', 'versover' ) );
+                echo '</span>';
+                echo '</li>';
+            }
+
+            // edit link
+            if ( is_user_logged_in() ) {
+                echo '<li>';
+                edit_post_link( __( 'Edit', 'versover' ), '<span class="meta-edit">', '</span>' );
+                echo '</li>';
+            }
         }
     }
 }
