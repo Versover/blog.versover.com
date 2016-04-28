@@ -163,3 +163,50 @@ if ( ! function_exists( 'versover_paging_nav' ) ) {
         </ul> <?php
     }
 }
+
+/**
+ * 6. Display pagination
+ */
+if ( ! function_exists( 'versover_paging_nav' ) ) {
+    function versover_paging_nav() { ?>
+        <ul>
+            <?php if ( get_previous_post_link() ) : ?>
+                <li class="next">
+                    <?php previous_post_link( __( 'Newer Posts &rarr;', 'versover' ) ); ?>
+                </li>
+            <?php endif; ?>
+
+            <?php if ( get_next_post_link() ) : ?>
+                <li class="previous">
+                    <?php next_post_link( __( '&larr; Older Posts', 'versover' ) ); ?>
+                </li>
+            <?php endif; ?>
+        </ul> <?php
+    }
+}
+
+/**
+ * 7. Load the custom scripts for the theme
+ */
+if ( ! function_exists( 'versover_scripts' ) ) {
+    function versover_scripts() {
+        // adds support for pages with threaded comments
+        if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+            wp_enqueue_script( 'comment-reply' );
+        }
+
+        // register scripts
+//        wp_register_script( 'bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js', array( 'jquery' ), false, true );
+//        wp_register_script( 'alpha-custom', SCRIPTS . '/scripts.js', array( 'jquery' ), false, true );
+//
+//        // load the custom scripts
+//        wp_enqueue_script( 'bootstrap-js' );
+//        wp_enqueue_script( 'versover-custom' );
+//
+//        // load the stylesheets
+//        wp_enqueue_style( 'font-awesome', THEMEROOT . '/css/font-awesome.min.css' );
+//        wp_enqueue_style( 'versover-master', THEMEROOT . '/css/master.css' );
+    }
+
+    add_action( 'wp_enqueue_scripts', 'versover_scripts' );
+}

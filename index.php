@@ -14,7 +14,7 @@
             <?php get_template_part( 'content', get_post_format() ); ?>
         <?php endwhile; ?>
 
-            <?php //versover_paging_nav(); ?>
+            <?php versover_paging_nav(); ?>
 
         <?php else : ?>
             <?php get_template_part( 'content', 'none' ); ?>
