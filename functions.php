@@ -149,15 +149,17 @@ if ( ! function_exists( 'versover_post_meta' ) ) {
 if ( ! function_exists( 'versover_paging_nav' ) ) {
     function versover_paging_nav() { ?>
         <ul>
-            <?php if ( get_preview_post_link() ) : ?>
+            <?php if ( get_previous_posts_link() ) : ?>
                 <li class="next">
-                    <?php previous_post_link( __( 'Newer Posts &rarr;', 'versover' ) ); ?>
+                    <?php previous_posts_link( __( 'Newer Posts &rarr;', 'versover' ) ); ?>
+                    <?php //previous_post_link('<strong>%link</strong>'); ?>
                 </li>
             <?php endif; ?>
 
-            <?php if ( get_next_post_link() ) : ?>
+            <?php if ( get_next_posts_link() ) : ?>
                 <li class="previous">
-                    <?php next_post_link( __( '&larr; Newer Older', 'versover' ) ); ?>
+                    <?php next_posts_link( __( '&larr; Newer Older', 'versover' ) ); ?>
+                    <?php //next_post_link('<strong>%link</strong>'); ?>
                 </li>
             <?php endif; ?>
         </ul> <?php
@@ -165,28 +167,7 @@ if ( ! function_exists( 'versover_paging_nav' ) ) {
 }
 
 /**
- * 6. Display pagination
- */
-if ( ! function_exists( 'versover_paging_nav' ) ) {
-    function versover_paging_nav() { ?>
-        <ul>
-            <?php if ( get_previous_post_link() ) : ?>
-                <li class="next">
-                    <?php previous_post_link( __( 'Newer Posts &rarr;', 'versover' ) ); ?>
-                </li>
-            <?php endif; ?>
-
-            <?php if ( get_next_post_link() ) : ?>
-                <li class="previous">
-                    <?php next_post_link( __( '&larr; Older Posts', 'versover' ) ); ?>
-                </li>
-            <?php endif; ?>
-        </ul> <?php
-    }
-}
-
-/**
- * 7. Load the custom scripts for the theme
+ * 6. Load the custom scripts for the theme
  */
 if ( ! function_exists( 'versover_scripts' ) ) {
     function versover_scripts() {
