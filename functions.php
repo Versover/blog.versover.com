@@ -152,14 +152,12 @@ if ( ! function_exists( 'versover_paging_nav' ) ) {
             <?php if ( get_previous_posts_link() ) : ?>
                 <li class="next">
                     <?php previous_posts_link( __( 'Newer Posts &rarr;', 'versover' ) ); ?>
-                    <?php //previous_post_link('<strong>%link</strong>'); ?>
                 </li>
             <?php endif; ?>
 
             <?php if ( get_next_posts_link() ) : ?>
                 <li class="previous">
                     <?php next_posts_link( __( '&larr; Newer Older', 'versover' ) ); ?>
-                    <?php //next_post_link('<strong>%link</strong>'); ?>
                 </li>
             <?php endif; ?>
         </ul> <?php
