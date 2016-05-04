@@ -5,9 +5,6 @@
  * The header of the theme
  */
 ?>
-<?php
-$favicon = IMG . '/icons/favicon.png';
-?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -20,7 +17,7 @@ $favicon = IMG . '/icons/favicon.png';
     <meta name="description" content="<?php bloginfo( 'description' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" href="<?php echo $favicon; ?>">
+    <link rel="shortcut icon" href="https://versover.com/favicon.ico">
 
     <?php wp_head(); ?>
 </head>

@@ -183,7 +183,7 @@ if ( ! function_exists( 'versover_scripts' ) ) {
 //        wp_enqueue_script( 'versover-custom' );
 //
 //        // load the stylesheets
-//        wp_enqueue_style( 'font-awesome', THEMEROOT . '/css/font-awesome.min.css' );
+        wp_enqueue_style( 'style', 'https://versover.com/css/app.css?v=2' );
 //        wp_enqueue_style( 'versover-master', THEMEROOT . '/css/master.css' );
     }
 
