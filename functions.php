@@ -175,16 +175,13 @@ if ( ! function_exists( 'versover_scripts' ) ) {
         }
 
         // register scripts
-//        wp_register_script( 'bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js', array( 'jquery' ), false, true );
-//        wp_register_script( 'alpha-custom', SCRIPTS . '/scripts.js', array( 'jquery' ), false, true );
-//
-//        // load the custom scripts
-//        wp_enqueue_script( 'bootstrap-js' );
-//        wp_enqueue_script( 'versover-custom' );
-//
-//        // load the stylesheets
+        wp_register_script( 'script', SCRIPTS . '/app.js', array(), false, true );
+
+        // load the custom scripts
+        wp_enqueue_script( 'script' );
+
+        // load the stylesheets
         wp_enqueue_style( 'style', 'https://versover.com/css/app.css?v=2' );
-//        wp_enqueue_style( 'versover-master', THEMEROOT . '/css/master.css' );
     }
 
     add_action( 'wp_enqueue_scripts', 'versover_scripts' );
