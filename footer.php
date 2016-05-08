@@ -3,7 +3,7 @@
     <div class="footer-content">
         <div class="container">
             <div class="row">
-                <div class="footer-col col-md-3 col-sm-4 links-col">
+                <div class="footer-col col-xs-3 col-sm-offset-3 col-xs-offset-1 links-col">
                     <div class="footer-col-inner">
                         <h3 class="sub-title"><?php _e( 'Quick Links', 'versover' ); ?></h3>
                         <?php
@@ -14,7 +14,7 @@
                         ?>
                     </div>
                 </div>
-                <div class="footer-col col-md-3 col-sm-12 contact-col">
+                <div class="footer-col col-xs-3 contact-col">
                     <div class="footer-col-inner">
                         <h3 class="sub-title"><?php _e( 'Get In Touch', 'versover' ); ?></h3>
                         <p class="intro"></p>
